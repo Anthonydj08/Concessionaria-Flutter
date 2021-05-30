@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "231511263751",
+    "project_id": "concessionaria-flutter",
+    "storage_bucket": "concessionaria-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231511263751:android:e791a662ce8541792778a2",
+        "android_client_info": {
+          "package_name": "com.example.concessionaria_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231511263751-c8vooiheoba30p39pblvolfeuinknuch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT7EY1sW6qNwQYPcF8gFH0KqvSch6kUJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231511263751-c8vooiheoba30p39pblvolfeuinknuch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
