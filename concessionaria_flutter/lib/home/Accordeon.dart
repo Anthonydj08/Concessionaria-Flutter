@@ -42,88 +42,39 @@ Widget buildText() => ExpansionTile(
       children: [
         Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                  side: BorderSide(color: Colors.indigoAccent, width: 1),
-                ),
-                child: new InkWell(
-                  onTap: () {
-                    print("tapped consorcio");
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    child: Center(
-                      child: Text(
-                        'Consorcio',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                  side: BorderSide(color: Colors.indigoAccent, width: 1),
-                ),
-                child: new InkWell(
-                  onTap: () {
-                    print("tapped financiamento");
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    child: Center(
-                      child: Text(
-                        'Financiamento',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Card(
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
-                  side: BorderSide(color: Colors.indigoAccent, width: 1),
-                ),
-                child: new InkWell(
-                  onTap: () {
-                    print("tapped seguro");
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    child: Center(
-                      child: Text(
-                        'Seguro',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            subBotao('Consorcio'),
+            subBotao('Financiamento'),
+            subBotao('Seguro'),
           ],
-        )
+        ),
       ],
     );
+
+Widget subBotao(texto) {
+  return Padding(
+    padding: const EdgeInsets.all(10.0),
+    child: Card(
+      semanticContainer: true,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+        side: BorderSide(color: Colors.indigoAccent, width: 1),
+      ),
+      child: new InkWell(
+        onTap: () {
+          print("tapped");
+        },
+        child: Container(
+          width: double.infinity,
+          height: 50,
+          child: Center(
+            child: Text(
+              'Seguro',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
