@@ -1,12 +1,12 @@
 import 'package:concessionaria_flutter/home/Home.dart';
 import 'package:flutter/material.dart';
 
-class CadastroVeiculo extends StatefulWidget {
+class CadastrarVeiculo extends StatefulWidget {
   @override
-  _CadastroState createState() => _CadastroState();
+  _CadastrarVeiculoState createState() => _CadastrarVeiculoState();
 }
 
-class _CadastroState extends State<CadastroVeiculo> {
+class _CadastrarVeiculoState extends State<CadastrarVeiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
