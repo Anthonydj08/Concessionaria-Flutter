@@ -22,14 +22,14 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               slideFotos(),
-              opcoes(),
+              opcoes(context),
               botaoAccordeon(),
               // rodaPe(),
             ],
           ),
         ),
       ),
-      drawer: sideBar(),
+      drawer: sideBar(context),
     );
   }
 }

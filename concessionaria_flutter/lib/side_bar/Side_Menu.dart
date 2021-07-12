@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget sideBar() {
+Widget sideBar(context) {
   return Drawer(
     child: Container(
       decoration: BoxDecoration(
@@ -46,86 +46,27 @@ Widget sideBar() {
               ),
             ),
           ),
-          veiculos(),
-          posVenda(),
-          manutecao(),
-          pecas(),
-          consorcio(),
-          financiamento(),
-          seguro(),
-          configuracoes(),
-          sair()
+          itemSideMenu(context, 'Cadastrar Veículo'),
+          itemSideMenu(context, 'Veículos'),
+          itemSideMenu(context, 'Pós Venda'),
+          itemSideMenu(context, 'Manuteção'),
+          itemSideMenu(context, 'peças'),
+          itemSideMenu(context, 'Consorcio'),
+          itemSideMenu(context, 'Financiamento'),
+          itemSideMenu(context, 'Seguro'),
+          itemSideMenu(context, 'Configurações'),
+          itemSideMenu(context, 'Sair')
         ],
       ),
     ),
   );
 }
 
-Widget veiculos() {
+Widget itemSideMenu(context, texto) {
   return ListTile(
-    title:
-        Text('Veículos', style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget posVenda() {
-  return ListTile(
-    title:
-        Text('Pós Venda', style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget manutecao() {
-  return ListTile(
-    title:
-        Text('Manuteção', style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget pecas() {
-  return ListTile(
-    title: Text('peças', style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget consorcio() {
-  return ListTile(
-    title:
-        Text('Consorcio', style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget financiamento() {
-  return ListTile(
-    title: Text('Financiamento',
-        style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget seguro() {
-  return ListTile(
-    title: Text('Seguro', style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget configuracoes() {
-  return ListTile(
-    title: Text('Configurações',
-        style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
-  );
-}
-
-Widget sair() {
-  return ListTile(
-    title: Text('Sair', style: TextStyle(fontSize: 16, color: Colors.white)),
-    onTap: () {},
+    title: Text(texto, style: TextStyle(fontSize: 16, color: Colors.white)),
+    onTap: () {
+      Navigator.of(context).pushNamed('/cadastroVeiculo');
+    },
   );
 }
