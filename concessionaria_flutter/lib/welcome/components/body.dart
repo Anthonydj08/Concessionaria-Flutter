@@ -11,11 +11,16 @@ class Body extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           Positioned(
-            top: 150,
+              top: 150,
               child: Image.asset(
-            "assets/imagens/carro.png",
-            width: size.width * 0.7,
-          ))
+                "assets/imagens/carro.png",
+                width: size.width * 0.5,
+              )),
+          IconButton(
+              icon: Icon(Icons.navigate_next),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/Home');
+              })
         ],
       ),
     );

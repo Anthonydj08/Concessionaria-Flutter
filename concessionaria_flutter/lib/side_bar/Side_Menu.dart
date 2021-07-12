@@ -46,27 +46,27 @@ Widget sideBar(context) {
               ),
             ),
           ),
-          itemSideMenu(context, 'Cadastrar Veículo'),
-          itemSideMenu(context, 'Veículos'),
-          itemSideMenu(context, 'Pós Venda'),
-          itemSideMenu(context, 'Manuteção'),
-          itemSideMenu(context, 'peças'),
-          itemSideMenu(context, 'Consorcio'),
-          itemSideMenu(context, 'Financiamento'),
-          itemSideMenu(context, 'Seguro'),
-          itemSideMenu(context, 'Configurações'),
-          itemSideMenu(context, 'Sair')
+          itemSideMenu(context, 'Cadastrar Veículo', '/cadastroVeiculo'),
+          itemSideMenu(context, 'Veículos', '/welcome'),
+          itemSideMenu(context, 'Pós Venda', '/welcome'),
+          itemSideMenu(context, 'Manuteção', '/welcome'),
+          itemSideMenu(context, 'peças', '/welcome'),
+          itemSideMenu(context, 'Consorcio', '/welcome'),
+          itemSideMenu(context, 'Financiamento', '/welcome'),
+          itemSideMenu(context, 'Seguro', '/welcome'),
+          itemSideMenu(context, 'Configurações', '/welcome'),
+          itemSideMenu(context, 'Sair', '/')
         ],
       ),
     ),
   );
 }
 
-Widget itemSideMenu(context, texto) {
+Widget itemSideMenu(context, texto, url) {
   return ListTile(
     title: Text(texto, style: TextStyle(fontSize: 16, color: Colors.white)),
     onTap: () {
-      Navigator.of(context).pushNamed('/cadastroVeiculo');
+      Navigator.of(context).pushNamed(url);
     },
   );
 }
