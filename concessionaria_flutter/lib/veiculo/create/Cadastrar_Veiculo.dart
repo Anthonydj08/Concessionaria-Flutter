@@ -1,4 +1,4 @@
-import 'package:concessionaria_flutter/home/Home.dart';
+import 'package:concessionaria_flutter/veiculo/components/App_Bar.dart';
 import 'package:flutter/material.dart';
 
 class CadastrarVeiculo extends StatefulWidget {
@@ -10,13 +10,18 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => Home()));
-          },
+      appBar: iconBar(context),
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          color: Color.fromARGB(255, 41, 45, 50),
+          child: Column(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.height,
+              )
+            ],
+          ),
         ),
       ),
     );
