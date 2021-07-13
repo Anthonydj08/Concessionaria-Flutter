@@ -19,37 +19,50 @@ Widget opcoes(context) {
 }
 
 Widget botao(context, texto, foto) {
-  return Card(
-    semanticContainer: true,
-    clipBehavior: Clip.antiAliasWithSaveLayer,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(50.0),
-      side: BorderSide(color: Colors.indigo, width: 2),
-    ),
-    child: new InkWell(
-      onTap: () {},
-      child: Container(
-        width: 170.0,
-        height: 100.0,
-        decoration: BoxDecoration(
-          color: const Color(0xff7c94b6),
-          image: new DecorationImage(
-            fit: BoxFit.cover,
-            colorFilter: new ColorFilter.mode(
-                Colors.black.withOpacity(0.3), BlendMode.dstATop),
-            image: new AssetImage(
-              foto,
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+    child: Card(
+      semanticContainer: true,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+        // side: BorderSide(color: Colors.indigo, width: 2),
+      ),
+      child: new InkWell(
+        onTap: () {},
+        child: Container(
+          width: 140.0,
+          height: 120.0,
+          decoration: BoxDecoration(
+            color: const Color(0xff7c94b6),
+            image: new DecorationImage(
+              fit: BoxFit.cover,
+              colorFilter: new ColorFilter.mode(
+                  Colors.black.withOpacity(0.2), BlendMode.dstATop),
+              image: new AssetImage(
+                foto,
+              ),
+            ),
+          ),
+          child: Center(
+            child: Text(
+              texto,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.lobster(fontSize: 22, color: Colors.white),
             ),
           ),
         ),
-        child: Center(
-          child: Text(
-            texto,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.lobster(fontSize: 22, color: Colors.black87),
-          ),
-        ),
       ),
+    ),
+  );
+}
+
+Widget texto() {
+  return Padding(
+    padding: const EdgeInsets.only(top: 15.0),
+    child: Center(
+      child: Text('O que fazer?',
+          style: GoogleFonts.lobster(fontSize: 22, color: Colors.white)),
     ),
   );
 }

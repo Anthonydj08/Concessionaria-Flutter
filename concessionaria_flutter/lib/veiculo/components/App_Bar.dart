@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 // ignore: non_constant_identifier_names
 Widget iconBar(context) {
   return AppBar(
+    title: Text(
+      'Cadastrar Veículo',
+      style: GoogleFonts.lobster(fontSize: 28, color: Colors.white),
+    ),
     leading: IconButton(
       icon: Icon(Icons.arrow_back),
       onPressed: () {
@@ -13,7 +18,10 @@ Widget iconBar(context) {
     flexibleSpace: Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.indigo, Colors.deepPurpleAccent],
+          colors: [
+            Color.fromRGBO(0, 184, 160, 1),
+            Color.fromRGBO(0, 133, 140, 1),
+          ],
           begin: Alignment.bottomRight,
           end: Alignment.topLeft,
         ),

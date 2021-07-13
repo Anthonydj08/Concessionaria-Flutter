@@ -6,7 +6,10 @@ Widget sideBar(context) {
     child: Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.deepPurpleAccent, Colors.indigo],
+          colors: [
+            Color.fromRGBO(0, 184, 160, 1),
+            Color.fromRGBO(0, 133, 140, 1),
+          ],
           begin: Alignment.bottomRight,
           end: Alignment.topLeft,
         ),

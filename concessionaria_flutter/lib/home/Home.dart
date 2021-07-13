@@ -22,6 +22,7 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               slideFotos(),
+              texto(),
               opcoes(context),
               botaoAccordeon(),
               // rodaPe(),
