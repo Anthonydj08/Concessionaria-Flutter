@@ -25,7 +25,6 @@ class _HomeState extends State<Home> {
               texto(),
               opcoes(context),
               botaoAccordeon(),
-              // rodaPe(),
             ],
           ),
         ),

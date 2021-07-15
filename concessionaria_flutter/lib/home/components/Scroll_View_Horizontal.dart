@@ -31,8 +31,8 @@ Widget botao(context, texto, foto) {
       child: new InkWell(
         onTap: () {},
         child: Container(
-          width: 140.0,
-          height: 120.0,
+          width: 110.0,
+          height: 110.0,
           decoration: BoxDecoration(
             color: const Color(0xff7c94b6),
             image: new DecorationImage(
@@ -48,7 +48,7 @@ Widget botao(context, texto, foto) {
             child: Text(
               texto,
               textAlign: TextAlign.center,
-              style: GoogleFonts.lobster(fontSize: 22, color: Colors.white),
+              style: GoogleFonts.lobster(fontSize: 20, color: Colors.white),
             ),
           ),
         ),
@@ -61,8 +61,8 @@ Widget texto() {
   return Padding(
     padding: const EdgeInsets.only(top: 15.0),
     child: Center(
-      child: Text('O que fazer?',
-          style: GoogleFonts.lobster(fontSize: 22, color: Colors.white)),
+      child: Text('O você quer fazer?',
+          style: GoogleFonts.lobster(fontSize: 20, color: Colors.white)),
     ),
   );
 }
