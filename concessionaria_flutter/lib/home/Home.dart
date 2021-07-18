@@ -1,8 +1,7 @@
-
 import 'package:concessionaria_flutter/home/components/Accordeon.dart';
 import 'package:concessionaria_flutter/home/components/Carousel.dart';
-import 'package:concessionaria_flutter/home/components/ScrollViewHorizontal.dart';
-import 'package:concessionaria_flutter/home/components/Title.dart';
+import 'package:concessionaria_flutter/home/components/Scroll_View_Horizontal.dart';
+import 'package:concessionaria_flutter/home/components/App_Bar.dart';
 import 'package:concessionaria_flutter/side_bar/Side_Menu.dart';
 import 'package:flutter/material.dart';
 
@@ -24,9 +23,9 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               slideFotos(),
+              texto(),
               opcoes(context),
               botaoAccordeon(),
-              // rodaPe(),
             ],
           ),
         ),

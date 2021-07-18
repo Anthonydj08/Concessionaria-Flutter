@@ -7,7 +7,10 @@ Widget sideBar(context) {
     child: Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [Colors.deepPurpleAccent, Colors.indigo],
+          colors: [
+            Color.fromRGBO(0, 184, 160, 1),
+            Color.fromRGBO(0, 133, 140, 1),
+          ],
           begin: Alignment.bottomRight,
           end: Alignment.topLeft,
         ),
@@ -47,15 +50,14 @@ Widget sideBar(context) {
               ),
             ),
           ),
-          itemSideMenu(context, 'Cadastrar Veículo', '/cadastroVeiculo'),
-          itemSideMenu(context, 'Veículos', '/welcome'),
-          itemSideMenu(context, 'Pós Venda', '/welcome'),
-          itemSideMenu(context, 'Manuteção', '/welcome'),
-          itemSideMenu(context, 'peças', '/welcome'),
-          itemSideMenu(context, 'Consorcio', '/welcome'),
-          itemSideMenu(context, 'Financiamento', '/welcome'),
-          itemSideMenu(context, 'Seguro', '/welcome'),
-          itemSideMenu(context, 'Configurações', '/welcome'),
+          itemSideMenu(context, 'Veículos', '/listarVeiculo'),
+          itemSideMenu(context, 'Pós Venda', '/'),
+          itemSideMenu(context, 'Manuteção', '/'),
+          itemSideMenu(context, 'peças', '/'),
+          itemSideMenu(context, 'Consorcio', '/'),
+          itemSideMenu(context, 'Financiamento', '/'),
+          itemSideMenu(context, 'Seguro', '/'),
+          itemSideMenu(context, 'Configurações', '/'),
           itemSideMenu(context, 'Sair', Welcome.routeName)
         ],
       ),
