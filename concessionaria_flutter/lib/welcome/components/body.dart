@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
           IconButton(
               icon: Icon(Icons.navigate_next),
               onPressed: () {
-                Navigator.of(context).pushNamed('/Home');
+                Navigator.of(context).pushNamed('/home');
               })
         ],
       ),

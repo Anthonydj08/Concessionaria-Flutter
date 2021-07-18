@@ -1,17 +1,26 @@
+import 'package:concessionaria_flutter/model/veiculo/VeiculoModel.dart';
 import 'package:concessionaria_flutter/veiculo/components/App_Bar.dart';
-import 'package:concessionaria_flutter/veiculo/components/Veiculo_Form.dart';
 import 'package:flutter/material.dart';
 
-class CadastrarVeiculo extends StatefulWidget {
+class ListarVeiculo extends StatefulWidget {
+  final List<VeiculoModel> veiculos = [];
+
   @override
-  _CadastrarVeiculoState createState() => _CadastrarVeiculoState();
+  _ListarVeiculoState createState() => _ListarVeiculoState();
 }
 
-class _CadastrarVeiculoState extends State<CadastrarVeiculo> {
+class _ListarVeiculoState extends State<ListarVeiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: iconBar(context),
+      appBar: iconBar('Veículos', '/home', context),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pushNamed('/cadastrarVeiculo');
+        },
+        child: const Icon(Icons.add),
+        backgroundColor: Color.fromRGBO(0, 184, 160, 1),
+      ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         color: Color.fromARGB(255, 41, 45, 50),
@@ -22,18 +31,7 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo> {
               padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
                 child: Column(
-                  children: [
-                    textField(
-                      'Fabricante',
-                    ),
-                    textField(
-                      'Modelo',
-                    ),
-                    textField(
-                      'Ano',
-                    ),
-                    // botaoAccordeon(),
-                  ],
+                  children: [],
                 ),
               ),
             ),

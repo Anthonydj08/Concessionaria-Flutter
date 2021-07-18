@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget iconBar(context) {
+Widget iconBar(texto, rota, context) {
   return AppBar(
     title: Text(
-      'Cadastrar Veículo',
+      texto,
       style: GoogleFonts.lobster(fontSize: 28, color: Colors.white),
     ),
     leading: IconButton(
       icon: Icon(Icons.arrow_back),
       onPressed: () {
-        Navigator.of(context).pushNamed('/Home');
+        Navigator.of(context).pushNamed(rota);
       },
     ),
     elevation: 10,

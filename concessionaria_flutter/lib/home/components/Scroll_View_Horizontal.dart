@@ -1,3 +1,5 @@
+import 'package:concessionaria_flutter/home/Home.dart';
+import 'package:concessionaria_flutter/veiculo/Listar_Veiculo.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,17 +10,47 @@ Widget opcoes(context) {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          botao(context, 'Veiculos', 'assets/imagens/veiculos.jpg'),
-          botao(context, 'Pós Venda', 'assets/imagens/posVenda.jpg'),
-          botao(context, 'Manutenção', 'assets/imagens/manutencao.jpg'),
-          botao(context, 'Peças', 'assets/imagens/pecas.jpg'),
+          botao(
+            context,
+            'Veiculos',
+            'assets/imagens/veiculos.jpg',
+            ListarVeiculo(),
+          ),
+          botao(
+            context,
+            'Pós Venda',
+            'assets/imagens/posVenda.jpg',
+            Home(),
+          ),
+          botao(
+            context,
+            'Manutenção',
+            'assets/imagens/manutencao.jpg',
+            Home(),
+          ),
+          botao(
+            context,
+            'Peças',
+            'assets/imagens/pecas.jpg',
+            Home(),
+          ),
         ],
       ),
     ),
   );
 }
 
-Widget botao(context, texto, foto) {
+Widget texto() {
+  return Padding(
+    padding: const EdgeInsets.only(top: 15.0),
+    child: Center(
+      child: Text('O você quer fazer?',
+          style: GoogleFonts.lobster(fontSize: 20, color: Colors.white)),
+    ),
+  );
+}
+
+Widget botao(context, texto, foto, rota) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8.0),
     child: Card(
@@ -29,7 +61,10 @@ Widget botao(context, texto, foto) {
         // side: BorderSide(color: Colors.indigo, width: 2),
       ),
       child: new InkWell(
-        onTap: () {},
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => rota),
+        ),
         child: Container(
           width: 110.0,
           height: 110.0,
@@ -53,16 +88,6 @@ Widget botao(context, texto, foto) {
           ),
         ),
       ),
-    ),
-  );
-}
-
-Widget texto() {
-  return Padding(
-    padding: const EdgeInsets.only(top: 15.0),
-    child: Center(
-      child: Text('O você quer fazer?',
-          style: GoogleFonts.lobster(fontSize: 20, color: Colors.white)),
     ),
   );
 }

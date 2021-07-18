@@ -1,10 +1,9 @@
-// import 'package:concessionaria_flutter/model/veiculo/Veiculo.dart';
-// import 'package:concessionaria_flutter/veiculo/components/Check_Box.dart';
-import 'package:concessionaria_flutter/model/veiculo/Veiculo_Model.dart';
+import 'package:concessionaria_flutter/model/veiculo/VeiculoModel.dart';
+// import 'package:concessionaria_flutter/veiculo/components/Check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget botaoAccordeon(Veiculo veiculo) {
+Widget botaoAccordeon(VeiculoModel veiculo) {
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 8.0),
     child: Card(
@@ -24,7 +23,21 @@ Widget botaoAccordeon(Veiculo veiculo) {
                 )
                 // ),
                 ),
-            child: buildText(veiculo),
+            child: ExpansionTile(
+              title: Text(
+                'Mais Informações',
+                style: GoogleFonts.lobster(fontSize: 24, color: Colors.white),
+              ),
+              children: [
+                Container(
+                  child: Column(
+                    children: [
+                      subBotaoExpansivo('Segurança', veiculo),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -32,27 +45,9 @@ Widget botaoAccordeon(Veiculo veiculo) {
   );
 }
 
-Widget buildText(Veiculo veiculo) {
-  return ExpansionTile(
-    title: Text(
-      'Mais Informações',
-      style: GoogleFonts.lobster(fontSize: 24, color: Colors.white),
-    ),
-    children: [
-      Container(
-        child: Column(
-          children: [
-            subBotaoExpansivo('Segurança', veiculo),
-          ],
-        ),
-      ),
-    ],
-  );
-}
+Widget subBotaoExpansivo(texto, veiculo) {
+  // final List<VeiculoModel> itens = [veiculo];
 
-bool value = false;
-
-Widget subBotaoExpansivo(texto, Veiculo veiculo) {
   return ExpansionTile(
     title: Text(
       texto,
@@ -63,11 +58,20 @@ Widget subBotaoExpansivo(texto, Veiculo veiculo) {
       ),
     ),
     children: [
-      Column(
-        children: [
-          // CheckBoxInListView('airbag Motorista', veiculo.airbagMotorista),
-          // CheckBoxInListView('airbag Passageiro', veiculo.airbagPassageiro),
-        ],
+      Expanded(
+        child: Column(
+          children: [
+            // ListView.builder(
+            //   itemCount: itens.length,
+            //   itemBuilder: (_, int index) {
+            //     return CheckBoxWidget(
+            //       veiculo: itens[index],
+            //       texto: 'Sim ou não?',
+            //     );
+            //   },
+            // ),
+          ],
+        ),
       ),
     ],
   );

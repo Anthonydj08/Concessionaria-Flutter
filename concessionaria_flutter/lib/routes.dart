@@ -1,4 +1,5 @@
-import 'package:concessionaria_flutter/veiculo/create/Cadastrar_Veiculo.dart';
+import 'package:concessionaria_flutter/veiculo/Cadastrar_Veiculo.dart';
+import 'package:concessionaria_flutter/veiculo/Listar_Veiculo.dart';
 import 'package:concessionaria_flutter/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'home/Home.dart';
@@ -12,8 +13,9 @@ class Routes extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => Welcome(),
-        '/Home': (context) => Home(),
+        '/home': (context) => Home(),
         '/cadastrarVeiculo': (context) => CadastrarVeiculo(),
+        '/listarVeiculo': (context) => ListarVeiculo(),
       },
     );
   }
