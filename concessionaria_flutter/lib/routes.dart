@@ -1,7 +1,9 @@
+import 'package:concessionaria_flutter/tema.dart';
 import 'package:concessionaria_flutter/veiculo/create/CadastroVeiculo.dart';
 import 'package:concessionaria_flutter/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'home/Home.dart';
+import 'login/login.dart';
 
 class Routes extends StatelessWidget {
   @override
@@ -9,10 +11,12 @@ class Routes extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Rotas Concessionaira',
-      initialRoute: '/',
+      theme: tema(),
+      initialRoute: Welcome.routeName,
       routes: {
-        '/': (context) => Welcome(),
-        '/Home': (context) => Home(),
+        Welcome.routeName: (context) => Welcome(),
+        Home.routeName: (context) => Home(),
+        Login.routeName: (context) => Login(),
         '/cadastroVeiculo': (context) => CadastroVeiculo(),
       },
     );

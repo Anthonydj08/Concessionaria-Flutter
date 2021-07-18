@@ -1,3 +1,4 @@
+import 'package:concessionaria_flutter/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -55,7 +56,7 @@ Widget sideBar(context) {
           itemSideMenu(context, 'Financiamento', '/welcome'),
           itemSideMenu(context, 'Seguro', '/welcome'),
           itemSideMenu(context, 'Configurações', '/welcome'),
-          itemSideMenu(context, 'Sair', '/')
+          itemSideMenu(context, 'Sair', Welcome.routeName)
         ],
       ),
     ),
