@@ -15,13 +15,12 @@ class Routes extends StatelessWidget {
       theme: tema(),
       initialRoute: Welcome.routeName,
       routes: {
+        '/': (context) => Welcome(),
         Welcome.routeName: (context) => Welcome(),
         Home.routeName: (context) => Home(),
         Login.routeName: (context) => Login(),
-        '/': (context) => Welcome(),
-        '/home': (context) => Home(),
-        '/cadastrarVeiculo': (context) => CadastrarVeiculo(),
-        '/listarVeiculo': (context) => ListarVeiculo(),
+        CadastrarVeiculo.routeName: (context) => CadastrarVeiculo(),
+        ListarVeiculo.routeName: (context) => ListarVeiculo(),
       },
     );
   }

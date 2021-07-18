@@ -2,7 +2,6 @@ import 'package:concessionaria_flutter/constants.dart';
 import 'package:concessionaria_flutter/size_config.dart';
 import 'package:flutter/material.dart';
 
-
 class WelcomeContent extends StatelessWidget {
   const WelcomeContent({
     Key key,

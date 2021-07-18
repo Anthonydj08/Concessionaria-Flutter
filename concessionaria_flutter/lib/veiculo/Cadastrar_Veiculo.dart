@@ -1,11 +1,14 @@
+import 'package:concessionaria_flutter/components/default_button.dart';
 import 'package:concessionaria_flutter/model/veiculo/VeiculoModel.dart';
-import 'package:concessionaria_flutter/veiculo/components/Accordeon.dart';
+import 'package:concessionaria_flutter/veiculo/Listar_Veiculo.dart';
 import 'package:concessionaria_flutter/veiculo/components/App_Bar.dart';
-import 'package:concessionaria_flutter/veiculo/components/Veiculo_Form.dart';
 import 'package:flutter/material.dart';
+
+import '../components/default_input.dart';
 
 class CadastrarVeiculo extends StatefulWidget {
   final VeiculoModel veiculo;
+  static String routeName = "/cadastrarVeiculo";
 
   const CadastrarVeiculo({Key key, this.veiculo}) : super(key: key);
 
@@ -17,7 +20,7 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: iconBar('Cadastrar Veiculo', '/listarVeiculo', context),
+      appBar: appBarVeiculo('Cadastrar Veiculo', ListarVeiculo.routeName, context),
       body: Container(
         height: MediaQuery.of(context).size.height,
         color: Color.fromARGB(255, 41, 45, 50),
@@ -28,17 +31,44 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo> {
               padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
                 child: Column(
-                  children: [
-                    textField(
-                      'Fabricante',
+                  children: <Widget>[
+                    DefaultInput(
+                      label: 'Fabricante',
                     ),
-                    textField(
-                      'Modelo',
+                    DefaultInput(
+                      label: 'Modelo',
                     ),
-                    textField(
-                      'Ano',
+                    DefaultInput(
+                      label: 'Ano',
                     ),
-                    botaoAccordeon(widget.veiculo),
+                    DefaultInput(
+                      label: 'Motorização',
+                    ),
+                    DefaultInput(
+                      label: 'Combustível',
+                    ),
+                    DefaultInput(
+                      label: 'Potência (cv)',
+                    ),
+                    DefaultInput(
+                      label: 'Torque (Kgf.m)',
+                    ),
+                    DefaultInput(
+                      label: 'Câmbio',
+                    ),
+                    DefaultInput(
+                      label: 'Direção',
+                    ),
+                    DefaultInput(
+                      label: 'Tanque (L)',
+                    ),
+                    DefaultButton(
+                      text: 'Salvar',
+                      press: () {
+                        Navigator.pushNamed(context, ListarVeiculo.routeName);
+                      },
+                    ),
+                    // botaoAccordeon(widget.veiculo),
                   ],
                 ),
               ),

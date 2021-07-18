@@ -15,7 +15,7 @@ ThemeData tema() {
 InputDecorationTheme inputDecorationTheme() {
   OutlineInputBorder outlineInputBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(28),
-    borderSide: BorderSide(color: kTextColor),
+    borderSide: BorderSide(color: kPrimaryColor),
     gapPadding: 10,
   );
   return InputDecorationTheme(
@@ -39,8 +39,9 @@ AppBarTheme appBarTheme() {
     elevation: 0,
     brightness: Brightness.light,
     iconTheme: IconThemeData(color: Colors.white),
+    centerTitle: true,
     textTheme: TextTheme(
-      headline6: TextStyle(color: Colors.white, fontSize: 18),
+      headline6: TextStyle(color: Colors.white, fontSize: 20),
     ),
   );
 }

@@ -1,9 +1,12 @@
+import 'package:concessionaria_flutter/home/Home.dart';
 import 'package:concessionaria_flutter/model/veiculo/VeiculoModel.dart';
+import 'package:concessionaria_flutter/veiculo/Cadastrar_Veiculo.dart';
 import 'package:concessionaria_flutter/veiculo/components/App_Bar.dart';
 import 'package:flutter/material.dart';
 
 class ListarVeiculo extends StatefulWidget {
   final List<VeiculoModel> veiculos = [];
+  static String routeName = "/listarVeiculo";
 
   @override
   _ListarVeiculoState createState() => _ListarVeiculoState();
@@ -13,10 +16,10 @@ class _ListarVeiculoState extends State<ListarVeiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: iconBar('Veículos', '/home', context),
+      appBar: appBarVeiculo('Veículos', Home.routeName, context),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/cadastrarVeiculo');
+          Navigator.of(context).pushNamed(CadastrarVeiculo.routeName);
         },
         child: const Icon(Icons.add),
         backgroundColor: Color.fromRGBO(0, 184, 160, 1),
