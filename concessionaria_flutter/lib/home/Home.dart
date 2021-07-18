@@ -1,20 +1,20 @@
-import 'package:concessionaria_flutter/home/components/Accordeon.dart';
-import 'package:concessionaria_flutter/home/components/Carousel.dart';
-import 'package:concessionaria_flutter/home/components/Scroll_View_Horizontal.dart';
-import 'package:concessionaria_flutter/home/components/App_Bar.dart';
-import 'package:concessionaria_flutter/side_bar/Side_Menu.dart';
 import 'package:flutter/material.dart';
-
+import '../home/components/Accordeon.dart';
+import '../home/components/Carousel.dart';
+import '../home/components/Scroll_View_Horizontal.dart';
+import '../components/App_Bar.dart';
+import '../side_bar/Side_Menu.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
+  static String routeName = "/home";
 }
 
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: titleBar(),
+      appBar: appBar('Honda Veículos'),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
               slideFotos(),
               texto(),
               opcoes(context),
-              botaoAccordeon(),
+              botaoAccordeon(context),
             ],
           ),
         ),

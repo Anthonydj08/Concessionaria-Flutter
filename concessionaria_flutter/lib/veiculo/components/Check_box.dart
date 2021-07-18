@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class CheckBoxWidget extends StatefulWidget {
   final VeiculoModel veiculo;
   final String texto;
+  final bool check;
 
-  CheckBoxWidget({Key key, this.veiculo, this.texto}) : super(key: key);
+  CheckBoxWidget({Key key, this.veiculo, this.texto, this.check}) : super(key: key);
 
   @override
   _CheckBoxWidgetState createState() => _CheckBoxWidgetState();
@@ -16,7 +17,7 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
   Widget build(BuildContext context) {
     return CheckboxListTile(
       title: Text(widget.texto),
-      value: widget.veiculo.vidrosEletricos,
+      value: widget.check,
       onChanged: (bool value) {
         setState(() {
           widget.veiculo.vidrosEletricos = value;

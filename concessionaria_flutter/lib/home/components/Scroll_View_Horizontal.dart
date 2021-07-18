@@ -1,7 +1,7 @@
 import 'package:concessionaria_flutter/home/Home.dart';
+import 'package:concessionaria_flutter/size_config.dart';
 import 'package:concessionaria_flutter/veiculo/Listar_Veiculo.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 Widget opcoes(context) {
   return Padding(
@@ -44,8 +44,13 @@ Widget texto() {
   return Padding(
     padding: const EdgeInsets.only(top: 15.0),
     child: Center(
-      child: Text('O você quer fazer?',
-          style: GoogleFonts.lobster(fontSize: 20, color: Colors.white)),
+      child: Text(
+        'O você quer fazer?',
+        style: TextStyle(
+          fontSize: 20,
+        ),
+      ),
+      // style: GoogleFonts.lobster(fontSize: 20, color: Colors.white)),
     ),
   );
 }
@@ -66,14 +71,14 @@ Widget botao(context, texto, foto, rota) {
           MaterialPageRoute(builder: (context) => rota),
         ),
         child: Container(
-          width: 110.0,
-          height: 110.0,
+          width: getProportionateScreenWidth(160),
+          height: getProportionateScreenWidth(90),
           decoration: BoxDecoration(
-            color: const Color(0xff7c94b6),
+            color: const Color(0xFF000000),
             image: new DecorationImage(
               fit: BoxFit.cover,
               colorFilter: new ColorFilter.mode(
-                  Colors.black.withOpacity(0.2), BlendMode.dstATop),
+                  Colors.black.withOpacity(0.7), BlendMode.dstATop),
               image: new AssetImage(
                 foto,
               ),
@@ -83,7 +88,10 @@ Widget botao(context, texto, foto, rota) {
             child: Text(
               texto,
               textAlign: TextAlign.center,
-              style: GoogleFonts.lobster(fontSize: 20, color: Colors.white),
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
