@@ -6,11 +6,13 @@ class VeiculoModel {
   bool vidrosEletricos;
 
   VeiculoModel(
-      {this.id,
-      this.fabricante,
-      this.modelo,
-      this.ano,
-      this.vidrosEletricos = false});
+      {
+      required this.id,
+      required this.fabricante,
+      required this.modelo,
+      required this.ano,
+      this.vidrosEletricos = false
+      });
 
   VeiculoModel.fromMap(Map<String, dynamic> veiculo)
       : id = veiculo['id'],
