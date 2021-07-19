@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 
 class DefaultInput extends StatelessWidget {
   const DefaultInput({
-    Key key,
-    this.label,
-    this.icon
+    Key? key,
+    required this.label,
+    required this.icon,
   }) : super(key: key);
 
-  final String label;
-  final String icon;
+  final String? label;
+  final String? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class DefaultInput extends StatelessWidget {
           labelStyle: TextStyle(color: kTextColor),
           labelText: label,
           suffixIcon: CustomSuffixIcon(
-            svgIcon: icon,
+            svgIcon: icon!,
           ),
         ),
       ),

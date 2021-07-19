@@ -13,9 +13,9 @@ class LoginForm extends StatefulWidget {
 
 class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
-  String email;
-  String senha;
-  bool lembrar = false;
+  String? email;
+  String? senha;
+  bool? lembrar = false;
   final List<String> erros = [];
   
   @override
@@ -51,9 +51,13 @@ class _LoginFormState extends State<LoginForm> {
           FormError(erros: erros),
           DefaultButton(
             text: 'Login',
+      
             press: () {
-              if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
+              var _formKey1 =_formKey.currentState;
+              if( _formKey1 != null){
+                if(_formKey1.validate()){
+                  _formKey1.save();
+                }
               }
             },
           ),
@@ -86,17 +90,34 @@ class _LoginFormState extends State<LoginForm> {
         }
         return null;
       },
+      // validator: (String? value){
+      //     var vl = value?.length; 
+      //     if(vl !=null){
+      //       if(vl < minimoDeCaracteresPermitidos){
+      //         return textoDeErroDeValidacao;
+      //       }
+      //       }
+      //     else
+      //       return null;
+      //   },
       validator: (value) {
-        if (value.isEmpty && !erros.contains(kPassNullError)) {
-          setState(() {
+        var valueIsEmpty = value?.isEmpty;
+        var valueLength = value?.length;
+        if (valueIsEmpty != null) {
+          if(!erros.contains(kPassNullError)){
+            setState(() {
             erros.add(kPassNullError);
-          });
-        } else if (value.length < 8 && !erros.contains(kShortPassError)) {
-          setState(() {
-            erros.add(kShortPassError);
-          });
+            });
+          }
+        } else if (valueLength != null ) {
+          if(!erros.contains(kShortPassError)){
+            setState(() {
+              erros.add(kShortPassError);
+            });
+          }
         }
         return null;
+        
       },
       decoration: InputDecoration(
         labelStyle: TextStyle(color: kTextColor),
@@ -129,12 +150,35 @@ class _LoginFormState extends State<LoginForm> {
         }
         return null;
       },
+      // validator: (String? value) {
+      //   var valueIsEmpty = value?.isEmpty;
+      //   var valueLength = value?.length;
+      //   if (valueIsEmpty != null) {
+      //     if(!erros.contains(kPassNullError)){
+      //       setState(() {
+      //       erros.add(kPassNullError);
+      //       });
+      //     }
+      //   } else if (valueLength != null ) {
+      //     if(!erros.contains(kShortPassError)){
+      //       setState(() {
+      //         erros.add(kShortPassError);
+      //       });
+      //     }
+      //   }
+      //   return null;
+        
+      // },
       validator: (value) {
-        if (value.isEmpty && !erros.contains(kEmailNullError)) {
-          setState(() {
-            erros.add(kEmailNullError);
-          });
-        } else if (!emailValidatorRegExp.hasMatch(value) &&
+        var valueIsEmpty = value?.isEmpty;
+      //   var valueLength = value?.length;
+        if (valueIsEmpty!) {
+          if(!erros.contains(kEmailNullError)){
+            setState(() {
+              erros.add(kEmailNullError);
+            });
+          }
+        } else if (!emailValidatorRegExp.hasMatch(value!) &&
             !erros.contains(kInvalidEmailError)) {
           setState(() {
             erros.add(kInvalidEmailError);
