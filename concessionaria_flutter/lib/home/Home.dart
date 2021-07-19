@@ -1,3 +1,4 @@
+import 'package:concessionaria_flutter/db/database.dart';
 import 'package:concessionaria_flutter/home/components/Accordeon.dart';
 import 'package:concessionaria_flutter/home/components/Carousel.dart';
 import 'package:concessionaria_flutter/home/components/Scroll_View_Horizontal.dart';
@@ -6,6 +7,8 @@ import 'package:concessionaria_flutter/side_bar/Side_Menu.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key,required this.db}) : super(key: key);
+  final AppDatabase db;
   @override
   _HomeState createState() => _HomeState();
 }
@@ -14,7 +17,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: titleBar(),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
+        child :titleBar(),
+        ),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,

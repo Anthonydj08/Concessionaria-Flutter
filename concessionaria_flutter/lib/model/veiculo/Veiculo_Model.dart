@@ -5,10 +5,10 @@ class Veiculo {
   String ano;
 
   Veiculo({
-    this.id,
-    this.fabricante,
-    this.modelo,
-    this.ano,
+    required this.id,
+    required this.fabricante,
+    required this.modelo,
+    required this.ano,
   });
 
   Veiculo.fromMap(Map<String, dynamic> veiculo)
