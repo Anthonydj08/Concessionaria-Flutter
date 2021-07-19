@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 class DefaultInput extends StatelessWidget {
   const DefaultInput({
-    Key key,
-    this.label,
+    Key? key,
+    required this.label,
   }) : super(key: key);
 
-  final String label;
+  final String? label;
 
   @override
   Widget build(BuildContext context) {
