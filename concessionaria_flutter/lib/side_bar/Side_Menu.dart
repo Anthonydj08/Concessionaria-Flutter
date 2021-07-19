@@ -1,3 +1,5 @@
+import 'package:concessionaria_flutter/veiculo/Listar_Veiculo.dart';
+import 'package:concessionaria_flutter/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -49,16 +51,15 @@ Widget sideBar(context) {
               ),
             ),
           ),
-          itemSideMenu(context, 'Cadastrar Veículo', '/cadastrarVeiculo'),
-          itemSideMenu(context, 'Veículos', '/'),
+          itemSideMenu(context, 'Veículos', ListarVeiculo.routeName),
           itemSideMenu(context, 'Pós Venda', '/'),
           itemSideMenu(context, 'Manuteção', '/'),
-          itemSideMenu(context, 'peças', '/'),
+          itemSideMenu(context, 'Peças', '/'),
           itemSideMenu(context, 'Consorcio', '/'),
           itemSideMenu(context, 'Financiamento', '/'),
           itemSideMenu(context, 'Seguro', '/'),
           itemSideMenu(context, 'Configurações', '/'),
-          itemSideMenu(context, 'Sair', '/')
+          itemSideMenu(context, 'Sair', Welcome.routeName)
         ],
       ),
     ),

@@ -1,16 +1,18 @@
 import 'package:concessionaria_flutter/db/database.dart';
-import 'package:concessionaria_flutter/home/components/Accordeon.dart';
-import 'package:concessionaria_flutter/home/components/Carousel.dart';
-import 'package:concessionaria_flutter/home/components/Scroll_View_Horizontal.dart';
-import 'package:concessionaria_flutter/home/components/App_Bar.dart';
-import 'package:concessionaria_flutter/side_bar/Side_Menu.dart';
+
 import 'package:flutter/material.dart';
+import '../home/components/Accordeon.dart';
+import '../home/components/Carousel.dart';
+import '../home/components/Scroll_View_Horizontal.dart';
+import '../components/App_Bar.dart';
+import '../side_bar/Side_Menu.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key,required this.db}) : super(key: key);
   final AppDatabase db;
   @override
   _HomeState createState() => _HomeState();
+  static String routeName = "/home";
 }
 
 class _HomeState extends State<Home> {
@@ -19,7 +21,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
-        child :titleBar(),
+        child : appBar('Honda Veículos'),
         ),
       body: SingleChildScrollView(
         child: Container(
@@ -30,7 +32,7 @@ class _HomeState extends State<Home> {
               slideFotos(),
               texto(),
               opcoes(context),
-              botaoAccordeon(),
+              botaoAccordeon(context),
             ],
           ),
         ),
