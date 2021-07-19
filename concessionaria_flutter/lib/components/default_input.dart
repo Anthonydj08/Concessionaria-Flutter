@@ -1,3 +1,4 @@
+import 'package:concessionaria_flutter/components/custom_svg_icon.dart';
 import 'package:concessionaria_flutter/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -5,9 +6,11 @@ class DefaultInput extends StatelessWidget {
   const DefaultInput({
     Key key,
     this.label,
+    this.icon
   }) : super(key: key);
 
   final String label;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +22,9 @@ class DefaultInput extends StatelessWidget {
         decoration: InputDecoration(
           labelStyle: TextStyle(color: kTextColor),
           labelText: label,
-          // suffixIcon: CustomSuffixIcon(
-          //   svgIcon: icon,
-          // ),
+          suffixIcon: CustomSuffixIcon(
+            svgIcon: icon,
+          ),
         ),
       ),
     );

@@ -34,33 +34,43 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo> {
                   children: <Widget>[
                     DefaultInput(
                       label: 'Fabricante',
+                      icon: 'assets/icones/Car.svg',
                     ),
                     DefaultInput(
                       label: 'Modelo',
+                      icon: 'assets/icones/Car.svg',
                     ),
                     DefaultInput(
                       label: 'Ano',
+                      icon: 'assets/icones/Calendar.svg',
                     ),
                     DefaultInput(
                       label: 'Motorização',
+                      icon: 'assets/icones/Motor.svg',
                     ),
                     DefaultInput(
                       label: 'Combustível',
+                      icon: 'assets/icones/Combustivel.svg',
                     ),
                     DefaultInput(
                       label: 'Potência (cv)',
+                      icon: 'assets/icones/Potencia.svg',
                     ),
                     DefaultInput(
                       label: 'Torque (Kgf.m)',
+                      icon: 'assets/icones/Pneu.svg',
                     ),
                     DefaultInput(
                       label: 'Câmbio',
+                      icon: 'assets/icones/Cambio.svg',
                     ),
                     DefaultInput(
                       label: 'Direção',
+                      icon: 'assets/icones/Volante.svg',
                     ),
                     DefaultInput(
                       label: 'Tanque (L)',
+                      icon: 'assets/icones/Tanque.svg',
                     ),
                     DefaultButton(
                       text: 'Salvar',
