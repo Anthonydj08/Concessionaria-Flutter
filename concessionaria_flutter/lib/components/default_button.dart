@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 
 class DefaultButton extends StatelessWidget {
   const DefaultButton({
-    Key key,
-    this.text,
-    this.press,
+    Key? key,
+    required this.text,
+    required this.press,
   }) : super(key: key);
   final String text;
-  final Function press;
+  final void Function()? press;
+  // required void Function()?
 
   @override
   Widget build(BuildContext context) {

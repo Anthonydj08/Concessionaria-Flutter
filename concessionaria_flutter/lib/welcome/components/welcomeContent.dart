@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 class WelcomeContent extends StatelessWidget {
   const WelcomeContent({
-    Key key,
-    this.text,
-    this.image,
+    Key? key,
+    required this.text,
+    required this.image,
   }) : super(key: key);
 
-  final String text, image;
+  final String? text, image;
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +26,12 @@ class WelcomeContent extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         Text(
-          text,
+          text!,
           textAlign: TextAlign.center,
         ),
         Spacer(flex: 2),
         Image.asset(
-          image,
+          image!,
           height: getProportionateScreenHeight(265),
           width: getProportionateScreenWidth(235),
         ),

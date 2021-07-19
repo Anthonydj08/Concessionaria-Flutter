@@ -16,7 +16,10 @@ class _ListarVeiculoState extends State<ListarVeiculo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarVeiculo('Veículos', Home.routeName, context),
+      appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60),
+          child: appBarVeiculo('Veículos', Home.routeName, context),
+        ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed(CadastrarVeiculo.routeName);

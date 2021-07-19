@@ -1,8 +1,13 @@
 import 'package:concessionaria_flutter/routes.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'db/database.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized(); 
   runApp(
-    Routes(),
+    Routes(
+      db: await $FloorAppDatabase.databaseBuilder('app_database.db').build(),
+    ),
   );
 }
