@@ -3,7 +3,7 @@ import 'package:concessionaria_flutter/size_config.dart';
 import 'package:concessionaria_flutter/veiculo/Listar_Veiculo.dart';
 import 'package:flutter/material.dart';
 
-Widget opcoes(context) {
+Widget opcoes(context, db) {
   return Padding(
     padding: const EdgeInsets.only(top: 15, bottom: 4.0, left: 8.0, right: 8.0),
     child: SingleChildScrollView(
@@ -20,19 +20,19 @@ Widget opcoes(context) {
             context,
             'Pós Venda',
             'assets/imagens/posVenda.jpg',
-            Home(),
+            Home(db: db),
           ),
           botao(
             context,
             'Manutenção',
             'assets/imagens/manutencao.jpg',
-            Home(),
+            Home(db: db),
           ),
           botao(
             context,
             'Peças',
             'assets/imagens/pecas.jpg',
-            Home(),
+            Home(db: db),
           ),
         ],
       ),

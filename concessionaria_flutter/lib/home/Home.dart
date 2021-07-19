@@ -8,16 +8,21 @@ import '../components/App_Bar.dart';
 import '../side_bar/Side_Menu.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key,required this.db}) : super(key: key);
+  Home({Key? key,required this.db}) : super(key: key);
   final AppDatabase db;
+
   @override
-  _HomeState createState() => _HomeState();
+  _HomeState createState() => _HomeState(this.db);
   static String routeName = "/home";
 }
 
 class _HomeState extends State<Home> {
+  final AppDatabase db;
+  _HomeState(this.db);
+  
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
@@ -31,7 +36,7 @@ class _HomeState extends State<Home> {
             children: [
               slideFotos(),
               texto(),
-              opcoes(context),
+              opcoes(context,db),
               botaoAccordeon(context),
             ],
           ),
