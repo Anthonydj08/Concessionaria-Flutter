@@ -2,6 +2,7 @@ import 'package:concessionaria_flutter/home/Home.dart';
 import 'package:concessionaria_flutter/model/veiculo/VeiculoModel.dart';
 import 'package:concessionaria_flutter/veiculo/Cadastrar_Veiculo.dart';
 import 'package:concessionaria_flutter/veiculo/components/App_Bar.dart';
+import 'package:concessionaria_flutter/veiculo/create/Visualizar_Veiculo.dart';
 import 'package:flutter/material.dart';
 
 class ListarVeiculo extends StatefulWidget {
@@ -17,9 +18,9 @@ class _ListarVeiculoState extends State<ListarVeiculo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
-          child: appBarVeiculo('Veículos', Home.routeName, context),
-        ),
+        preferredSize: const Size.fromHeight(60),
+        child: appBarVeiculo('Veículos', Home.routeName, context),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context).pushNamed(CadastrarVeiculo.routeName);
