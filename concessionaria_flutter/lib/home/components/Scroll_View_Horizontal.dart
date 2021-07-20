@@ -14,7 +14,7 @@ Widget opcoes(context, db) {
             context,
             'Veiculos',
             'assets/imagens/veiculos.jpg',
-            ListarVeiculo(),
+            ListarVeiculo(db: db),
           ),
           botao(
             context,

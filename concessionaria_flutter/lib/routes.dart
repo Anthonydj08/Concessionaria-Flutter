@@ -24,8 +24,8 @@ class Routes extends StatelessWidget {
         Home.routeName: (context) => Home(db: db),
         Login.routeName: (context) => Login(),
         CadastrarVeiculo.routeName: (context) => CadastrarVeiculo(db: db),
-        ListarVeiculo.routeName: (context) => ListarVeiculo(),
         VisualizarVeiculo.routeName: (context) => VisualizarVeiculo(),
+        ListarVeiculo.routeName: (context) => ListarVeiculo(db: db),
       },
     );
   }
