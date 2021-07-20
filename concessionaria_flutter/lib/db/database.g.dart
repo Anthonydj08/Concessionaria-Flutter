@@ -81,7 +81,7 @@ class _$AppDatabase extends AppDatabase {
       },
       onCreate: (database, version) async {
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `Veiculo` (`fabricante` TEXT NOT NULL, `modelo` TEXT NOT NULL, `ano` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `Veiculos` (`fabricante` TEXT NOT NULL, `modelo` TEXT NOT NULL, `ano` TEXT NOT NULL, `id` INTEGER PRIMARY KEY AUTOINCREMENT, `createdAt` TEXT NOT NULL, `updatedAt` TEXT NOT NULL)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -101,7 +101,7 @@ class _$VeiculoRepositoryDao extends VeiculoRepositoryDao {
       : _queryAdapter = QueryAdapter(database, changeListener),
         _veiculoEntityInsertionAdapter = InsertionAdapter(
             database,
-            'Veiculo',
+            'Veiculos',
             (VeiculoEntity item) => <String, Object?>{
                   'fabricante': item.fabricante,
                   'modelo': item.modelo,
@@ -113,7 +113,7 @@ class _$VeiculoRepositoryDao extends VeiculoRepositoryDao {
             changeListener),
         _veiculoEntityUpdateAdapter = UpdateAdapter(
             database,
-            'Veiculo',
+            'Veiculos',
             ['id'],
             (VeiculoEntity item) => <String, Object?>{
                   'fabricante': item.fabricante,
@@ -126,7 +126,7 @@ class _$VeiculoRepositoryDao extends VeiculoRepositoryDao {
             changeListener),
         _veiculoEntityDeletionAdapter = DeletionAdapter(
             database,
-            'Veiculo',
+            'Veiculos',
             ['id'],
             (VeiculoEntity item) => <String, Object?>{
                   'fabricante': item.fabricante,
@@ -161,7 +161,7 @@ class _$VeiculoRepositoryDao extends VeiculoRepositoryDao {
             modelo: row['modelo'] as String,
             ano: row['ano'] as String),
         arguments: [id],
-        queryableName: 'Veiculo',
+        queryableName: 'Veiculos',
         isView: false);
   }
 
