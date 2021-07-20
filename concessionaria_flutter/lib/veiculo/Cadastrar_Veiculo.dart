@@ -17,22 +17,46 @@ class CadastrarVeiculo extends StatefulWidget {
   static String routeName = "/cadastrarVeiculo";
   // const CadastrarVeiculo({Key key, this.veiculo}) : super(key: key);
 
-  CadastrarVeiculo({Key? key,required this.db}) : super(key: key);
+  CadastrarVeiculo({Key? key,required this.db, this.veiculo}) : super(key: key);
   final AppDatabase db;
+  final VeiculoEntity? veiculo;
 
   @override
-  _CadastrarVeiculoState createState() => _CadastrarVeiculoState(this.db);
+  _CadastrarVeiculoState createState() => _CadastrarVeiculoState(this.db,this.veiculo);
 }
 
 class _CadastrarVeiculoState extends State<CadastrarVeiculo>  {
   final AppDatabase db;
-  TextEditingController _fabricanteControler = TextEditingController();
-  TextEditingController _modeloControler = TextEditingController();
-  TextEditingController _anoControler = TextEditingController();
+  final VeiculoEntity? veiculo;
+  
+  var _fabricanteControler;
+  var _modeloControler;
+  var _anoControler;
+  var fabricante;
+  var modelo;
+  var ano;
 
   var _formKey = GlobalKey<FormState>();
-
-  _CadastrarVeiculoState(this.db);
+  
+  _CadastrarVeiculoState(this.db,this.veiculo);
+  
+  @override
+  void initState() {
+    // if (veiculo != null)  {
+    //   var fabricante = veiculo!.fabricante;
+    // }
+    // if (veiculo != null)  {
+    //   var modelo = veiculo!.modelo;
+    // }
+    // if (veiculo != null)  {
+    //   var ano = veiculo!.ano;
+    // }
+    _fabricanteControler = TextEditingController(text: veiculo != null ? veiculo!.fabricante: '');
+    _modeloControler = TextEditingController(text: veiculo != null ? veiculo!.modelo: '');
+    _anoControler = TextEditingController(text: veiculo != null ? veiculo!.ano: '');
+    super.initState();
+  }
+  
   @override
   Widget build(BuildContext context) {
     var botaoParaCadastrar = 
@@ -47,28 +71,40 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo>  {
       var _formKey1 =_formKey.currentState;
       if( _formKey1 != null){
         if(_formKey1.validate()){
-          
-          db.veiculoRepositoryDao.insertItem(VeiculoEntity(
-
+          var veiculo = VeiculoEntity(
+            id: widget.veiculo != null ? widget.veiculo!.id : null,
             createdAt: DateTime.now().toUtc().toString(),
-            updatedAt: '',
             fabricante:_fabricanteControler.text,
             modelo: _modeloControler.text,
             ano: _anoControler.text,
            
-          ));
+            );
+            if(widget.veiculo != null){
+              db.veiculoRepositoryDao.updateItem(veiculo);
+            }else{
+              db.veiculoRepositoryDao.insertItem(veiculo);
+            }
+          
           print(_formKey.currentState?.validate().toString());
           print(_fabricanteControler.text);
           print(_modeloControler.text);
           print(_anoControler.text);
+          Navigator.pop(context,true);
         }
       }
+      
      
 
       
       
       },
       child: Icon(Icons.add),
+    );
+    var botaoParaDeletar = new FloatingActionButton (onPressed: () {
+        widget.db.veiculoRepositoryDao.deleteItem(widget.veiculo!);
+        Navigator.pop(context,true);
+      },
+      child: Icon(Icons.delete),
     );
                       
     var cadastroVeiculoForm = new Container(
@@ -138,7 +174,9 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo>  {
                     textField(
                       'Ano', _anoControler,4,'Digite o ano inteiro. Ex: 2021',TextInputType.number
                     ),
-                    botaoParaCadastrar
+                    botaoParaCadastrar,
+                    SizedBox(height: 10,),
+                    widget.veiculo !=null? botaoParaDeletar:Container(),
                     // botaoAccordeon(),
                   ],
                 ),
