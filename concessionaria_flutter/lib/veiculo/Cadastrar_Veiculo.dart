@@ -42,15 +42,7 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo>  {
   
   @override
   void initState() {
-    // if (veiculo != null)  {
-    //   var fabricante = veiculo!.fabricante;
-    // }
-    // if (veiculo != null)  {
-    //   var modelo = veiculo!.modelo;
-    // }
-    // if (veiculo != null)  {
-    //   var ano = veiculo!.ano;
-    // }
+
     _fabricanteControler = TextEditingController(text: veiculo != null ? veiculo!.fabricante: '');
     _modeloControler = TextEditingController(text: veiculo != null ? veiculo!.modelo: '');
     _anoControler = TextEditingController(text: veiculo != null ? veiculo!.ano: '');
@@ -61,13 +53,6 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo>  {
   Widget build(BuildContext context) {
     var botaoParaCadastrar = 
     new FloatingActionButton (onPressed: () {
-      // (String? value){
-      //     var vl = value?.length; 
-      //     if(vl !=null){
-      //       if(vl < minimoDeCaracteresPermitidos){
-      //         return textoDeErroDeValidacao;
-      //       }
-      //       }
       var _formKey1 =_formKey.currentState;
       if( _formKey1 != null){
         if(_formKey1.validate()){
