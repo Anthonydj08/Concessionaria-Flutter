@@ -2,13 +2,12 @@ import 'package:concessionaria_flutter/db/database.dart';
 import 'package:concessionaria_flutter/entitys/veiculo_entity.dart';
 
 import 'package:concessionaria_flutter/home/Home.dart';
-import 'package:concessionaria_flutter/model/veiculo/VeiculoModel.dart';
 import 'package:concessionaria_flutter/veiculo/Cadastrar_Veiculo.dart';
 import 'package:concessionaria_flutter/veiculo/components/App_Bar.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ListarVeiculo extends StatefulWidget {
-  final List<VeiculoModel> veiculos = [];
   static String routeName = "/listarVeiculo";
   ListarVeiculo({Key? key,required this.db, this.veiculo}) : super(key: key);
   final AppDatabase db;
