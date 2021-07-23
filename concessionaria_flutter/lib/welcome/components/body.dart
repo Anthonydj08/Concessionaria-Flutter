@@ -70,6 +70,7 @@ class _BodyState extends State<Body> {
                       flex: 3,
                     ),
                     DefaultButton(
+                      key: const ValueKey("botaoDeContinuar"),
                       text: "Continuar",
                       press: () {
                         Navigator.pushNamed(context, Login.routeName);

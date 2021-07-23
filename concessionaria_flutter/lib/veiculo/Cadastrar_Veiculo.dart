@@ -60,7 +60,9 @@ class _CadastrarVeiculoState extends State<CadastrarVeiculo>  {
   @override
   Widget build(BuildContext context) {
     var botaoParaCadastrar = 
-    new FloatingActionButton (onPressed: () {
+    new FloatingActionButton (
+      key: const ValueKey("botaoDeAdicionarVeiculo"),
+      onPressed: () {
       // (String? value){
       //     var vl = value?.length; 
       //     if(vl !=null){

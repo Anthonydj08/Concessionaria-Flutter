@@ -9,6 +9,7 @@ Widget textField(texto1, textController,minimoDeCaracteresPermitidos,textoDeErro
     child: Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0),
       child: new TextFormField(
+        key: const ValueKey("txtFieldCadastrarVeiculo"),
         controller: textController,
         validator: (String? value){
           var vl = value?.length; 

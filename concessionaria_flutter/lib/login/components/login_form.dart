@@ -63,6 +63,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
           SizedBox(height: getProportionateScreenHeight(30)),
           DefaultButton(
+            key: const ValueKey("botaoDeContinuarSemLogin"),
             text: 'Continuar Sem login',
             press: () {
               Navigator.pushNamed(context, Home.routeName);

@@ -57,6 +57,7 @@ Widget texto() {
 
 Widget botao(context, texto, foto, rota) {
   return Padding(
+    
     padding: const EdgeInsets.symmetric(horizontal: 8.0),
     child: Card(
       semanticContainer: true,
@@ -85,6 +86,7 @@ Widget botao(context, texto, foto, rota) {
             ),
           ),
           child: Center(
+            key: const ValueKey("botaoDeVeiculos"),
             child: Text(
               texto,
               textAlign: TextAlign.center,

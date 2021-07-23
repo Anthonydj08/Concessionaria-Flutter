@@ -30,6 +30,7 @@ class _ListarVeiculoState extends State<ListarVeiculo> {
         child: appBarVeiculo('Veículos', Home.routeName, context),
       ),
       floatingActionButton: FloatingActionButton(
+        key: const ValueKey("botaoParaAdicionarEEditarVeiculos"),
         onPressed: () async{
           await Navigator.of(context).pushNamed(CadastrarVeiculo.routeName);
         },
